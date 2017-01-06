@@ -8,6 +8,8 @@ var TodoApp = React.createClass({
 
 	getInitialState: function () {
 		return {
+			showCompleted: false,
+			searchText: '',
 			todos: [
 				{
 					id: 1,
@@ -33,7 +35,7 @@ var TodoApp = React.createClass({
 	handleSearch: function (showCompleted, searchText) {
 		this.setState({
 			showCompleted: showCompleted,
-			searchText: searchText
+			searchText: searchText.toLowerCase()
 		});
 	},
 
