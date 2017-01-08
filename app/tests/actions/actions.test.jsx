@@ -36,4 +36,20 @@ describe('Actions', () => {
 		var res = actions.toggleTodo(action.id);
 		expect(res).toEqual(action);
 	});
+
+	it('should generante add todos action obj', () => {
+		var todos = [{
+			id: '111',
+			text: 'test',
+			completed: false,
+			completedAt: undefined,
+			createdAt: 3300
+		}];
+		var action = {
+			type: 'ADD_TODOS',
+			todos
+		};
+		var res = actions.addTodos(action.todos);
+		expect(res).toEqual(action);
+	});
 });
