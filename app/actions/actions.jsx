@@ -92,6 +92,13 @@ export var startToggleTodo = (id, completed) => {
 	};
 };
 
+export var login = (uid) => {
+	return {
+		type: 'LOGIN',
+		uid
+	};
+};
+
 export var startLogin = () => {
   return (dispatch, getState) => {
     return firebase.auth().signInWithPopup(githubProvider).then((result) => {
@@ -102,6 +109,13 @@ export var startLogin = () => {
   };
 };
 
+export var logout = () => {
+	return {
+		type: 'LOGOUT',
+	};
+};
+
+
 export var startLogout = () => {
   return (dispatch, getState) => {
     return firebase.auth().signOut().then(() => {
@@ -109,6 +123,8 @@ export var startLogout = () => {
     });
   };
 };
+
+
 
 
 
