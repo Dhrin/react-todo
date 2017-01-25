@@ -86,6 +86,22 @@ describe('Reducers', () => {
 			expect(res[0]).toEqual(todos[0]);
 		});
 
+		it('should delete all todos when logout', () => {
+			var todos = [{
+				id: '123',
+				text: 'something',
+				completed: true,
+				creatAt: 123,
+				completedAt: 125
+			}];
+			var action = {
+				type: 'LOGOUT'
+			};
+			var res = reducers.todosReducer(df(todos), df(action));
+
+			expect(res.length).toEqual(0);
+			expect(res).toEqual([]);
+		});
 	});
 
 	describe('authReducer', () => {
@@ -114,18 +130,3 @@ describe('Reducers', () => {
 		});
 	});
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
